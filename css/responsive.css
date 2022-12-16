@@ -1,0 +1,401 @@
+/*
+
+--rem and em do NOT depend on html font-size in media queries!
+--instead 1remX=1em=16px
+--DONT USE rem! Bug in media queries!!!
+
+--BREAKPOINTS--
+84em/75em/
+
+Converted:
+--1344px (smaller desktops)/1200px (landscape tablets tablets)/
+
+*/
+
+/*BELLOW 1344px*/
+@media (max-width:84em){
+    .hero{
+        max-width: 120rem;
+    }
+
+    .heading-primary{
+        font-size: 4.4rem;
+    }
+
+    .gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }   
+}
+
+/*BELLOW 120px*/
+@media(max-width:75em){
+    html{
+        font-size: 56.25%;
+    }
+
+    .heading-secondary{
+        font-size: 3.6rem;
+    }
+    .heading-tertiary{
+        font-size: 2.4rem;
+    }
+
+    .grid{
+        column-gap: 4.8rem;
+        row-gap: 6.4rem;
+    }
+
+    .header{
+        padding: 0 3.2rem;
+    }
+
+    .hero{
+        gap:4.8rem;
+    }
+
+    .main-nav-list{
+        gap:3.2rem
+    }
+    
+    .testimonials-container{
+        padding: 4.8rem 3.2rem;
+    }
+}
+
+
+/*BELLOW 944px (tablets)*/
+@media(max-width:59em){
+    html{
+        font-size: 50%;
+    }
+
+    .hero{
+        grid-template-columns: 1fr;
+        padding: 0 8rem;
+        gap: 6.4rem;
+    }
+    .hero-img{
+        width: 60%;
+    }
+    .hero-text-box, .hero-image-box{
+        text-align: center;
+    }
+    .delivered-meals{
+        justify-content: center;
+        margin-top: 3.2rem;
+    }
+
+    .logos img{
+        height: 2.4rem;
+    }
+
+    .step-number{
+        font-size: 7.4rem;
+    }
+    
+    .meal-text{
+        margin: 2.4rem 3.2rem 3.2rem 3.6rem;
+    }
+
+    .section-testimonials{
+        grid-template-columns: 1fr;
+    }
+    .gallery{
+        grid-template-columns:repeat(6,1fr)
+    }
+
+    .main-nav-list{
+        gap: 2.4rem;
+    }
+
+    .cta-container{
+        grid-template-columns: 3fr 2fr;
+    }
+    .cta-form-container{
+        grid-template-columns: 1fr;
+    }
+    .cta-btn{
+        margin-top: 1.2rem;
+    }
+    
+    .pricing-plan-complete::after{
+        top: 20px;
+        right: -60px;
+    }
+}
+
+
+/*BELLOW 780px (tablets)*/
+@media (max-width:49em){
+    html{
+        font-size:43.74%
+    }
+    .meal-text{
+        margin: 2.4rem 2.4rem 2.4rem 2.6rem;
+    }
+
+    .pricing-plan-complete::after{
+        top: 20px;
+        right: -55px;
+    }
+
+    /*MOBILE NAVIGATION*/
+    .btn-mobile-nav{
+        display: block;
+        z-index: 1000;
+    }
+    .main-nav{
+        background-color: rgba(248, 216, 189, 0.7);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        transform: translateX(100%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease-in;
+
+        /*HIDE NAVIGATION*/
+        /*Allows No transitions at all*/
+        /* display: none; */
+
+        /*1) Hide element visualy*/
+        opacity: 0;
+        /*2) Make it unaccessible to mouse and keyboard*/
+        pointer-events: none;
+        /*3) Hide it from screen readers*/
+        visibility: hidden;
+    }
+    .nav-open .main-nav{
+        opacity: 100%;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    .nav-open .icon-mobile-nav[name="close-outline"]{
+        display: block;
+    }
+    .nav-open .icon-mobile-nav[name="menu-outline"]{
+        display: none;
+    }
+    .main-nav-list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8rem;
+    }
+    .main-nav-link:link, .main-nav-link:visited{
+        font-size: 3rem;
+    }
+}
+
+/*BELLOW 704px (Smaller tablets)*/
+@media (max-width:44em){
+    html{
+        font-size: 50%;
+    }
+    .grid--3-cols{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid--4-cols{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .heading-secondary{
+        margin-bottom: 4.8rem;
+    }
+    .pricing-plan-complete::after{
+        top: 25px;
+        right: -60px;
+    }
+    .grid--footer{
+        grid-template-columns: repeat(6,1fr);
+        justify-content: center;
+        text-align: center;
+    }
+    .social-networks{
+        justify-content: center;
+    }
+    .nav-col{
+        grid-row: 1;
+        grid-column: span 2;
+        margin-bottom: 3.2rem;
+    }
+    .logo-col{
+        grid-column: span 3;
+    }
+    .adress-col{
+        grid-column: span 3;
+    }
+    .diets{
+        grid-column: 1/-1;
+        justify-self: center;
+        text-align: center;
+    }
+    .diets-list{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .diets-heding{
+        text-align: center;
+    }
+    .feature{
+        text-align: center;
+    }
+    .pricing-plan{
+        width: 100%;
+    }
+}
+
+/*BELLOW 544px (Smaller tablets)*/
+@media (max-width:34em){
+    .grid{
+        row-gap: 4.8rem;
+    }
+    .grid--2-cols, .grid--3-cols, .grid--4-cols{
+        grid-template-columns: 1fr;
+    }
+    .meal{
+        width: 60%;
+        justify-self: center;
+    }
+    .step-img-box{
+        transform: translateY(24px);
+        margin: 2.4rem 0;
+    }
+    .step-img{
+        width: 30%;
+    }
+    .step-img-box::before{
+        width: 70%;
+        padding-bottom: 70%;
+    }
+    .step-img-box::after{
+        width: 50%;
+        padding-bottom: 50%;
+    }
+    .step-img-box:nth-child(2){
+        grid-row: 1;
+    }
+    .step-img-box:nth-child(6){
+        grid-row: 5;
+    }
+    .step-text-box{
+        margin-bottom: 6.8rem;
+    }
+    .logos img{
+        height: 1.2rem;
+    }
+    .hero{
+        padding: 0 3.2rem;
+    }
+    .section-hero{
+        padding: 2.4rem 0 4.8rem;
+    }
+    .btn, .btn:link, .btn:visited{
+        padding: 2.4rem 1.6rem;
+        margin: 0 auto 3.2rem;
+    }
+    .hero-img{
+        width: 80%;
+    }
+    .testimonials{
+        grid-template-columns: 1fr;
+    }
+    .gallery{
+        grid-template-columns: repeat(4,1fr);
+        gap: 1.2rem;
+    }
+    .cta-container{
+        grid-template-columns: 1fr;
+    }
+    .cta-img-box{
+        grid-row: 1;
+        height: 32rem;
+    }
+    .cta-text-box{
+        padding: 3.2rem;
+    }
+}
+
+@media (max-width:29em){
+    .meal{
+        width: 70%;
+    }
+}
+
+@media (max-width:27em){
+    .meal{
+        width: 80%;
+    }
+    
+    .diets-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Bellow 351px(smaller phones)*/
+@media (max-width:22.5em){
+    .margin-right-sm{
+        margin-right: 1.6rem !important;
+    }
+    .meal{
+        width: 100%;
+    }
+    .diets-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Bellow 336px(smaller phones)*/
+@media (max-width:21em){
+    .margin-right-sm{
+        margin-right: 0 !important;
+    }
+}
+
+/*
+---01 TYPOGRAPHY SYSTEM
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+FONT WEIGHTS
+400/500/600/700
+
+LINE HEIGHTS
+1/1.05/1.2/1.6
+
+LETTER SPACING
+05px/0.75px
+
+
+---02 COLORS
+
+PRIMARY: #e67e22
+TINTS: #fdf2e9/#f8d8bd
+SHADES: #2e1907/
+ACCENTS:#cf711f
+GRAYS: #555/#333/#343a40/#6f6f6f
+
+ADDONS:#82c91e/#ffd43b/#37b24d
+
+
+---03 SHADOWS
+
+
+
+---04 BORDER-RADIUS
+DEFAULT: 9px
+
+
+---05 WHITESPACE
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
